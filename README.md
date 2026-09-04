@@ -6,7 +6,7 @@ There are good broad libraries already. [coreyhaines31/marketingskills](https://
 has 50 skills spanning copywriting, SEO, popups, PR and more, and if you want
 breadth you should use it.
 
-This is the other half. Eight skills, each long, for the questions where a
+This is the other half. Ten skills, each long, for the questions where a
 shallow answer is worse than none:
 
 **Is this number true? Is this channel actually profitable? Is that result real
@@ -22,6 +22,8 @@ skills/
   retention-diagnosis/  reading cohorts without fooling yourself
   activation/           time to value, and the one moment that predicts retention
   channel-fit/          which channel suits which business, and when to quit one
+  capacity-economics/   when the profit lever is occupancy, not price
+  form-friction/        where the form loses people you already paid for
 ```
 
 ## Install
@@ -49,6 +51,12 @@ the marketing.
 **They are opinionated, and say which opinions are conventions.** Where a
 threshold is a rule of thumb rather than arithmetic, it says so and tells you to
 tune it.
+
+**They cover constraints that spreadsheets miss.** The ceiling your recurring
+payment method puts on your own pricing. The margin that only exists because
+customers do not consume what they bought. The operational log whose row count
+is several times its event count. These decide real outcomes and are almost
+never written down.
 
 ## What is not here
 

@@ -30,6 +30,21 @@ transaction id, never on a session.
 **4. Value corruption.** Counts reconcile, revenue does not — usually a pixel
 sending a static value on every event. Check both, separately.
 
+**5. Counting rows instead of events.** Operational logs are usually
+append-only: a record is written every time something is touched, so one
+underlying event appears as many rows. Row count then overstates reality by
+whatever the average touch count happens to be, and the multiple is not stable
+over time.
+
+**Never report a row count from an operational log as an event count.** Count
+distinct keys — the order, the customer, the date, whichever identifies the
+thing once — and state which key you used. If no such key exists, that is the
+finding.
+
+The same trap in calendar form: counting filled cells rather than distinct
+periods. A schedule with one row per participant per occurrence counts an
+occurrence once per participant, not once.
+
 ## Reconcile against something the platform does not control
 
 Ad platforms are graded by their own homework. Pick a source of truth
@@ -51,6 +66,16 @@ business actually runs on — then compare, for the same window and definition:
 - **Compare like windows.** 7-day-click and 1-day-click answer different
   questions. Pick one and hold it
 - **Yesterday is provisional.** Attribution restates for days
+- **Two events with similar names are not the same event.** A generic
+  `Lead` and a product-qualified `Product Lead` measure different populations,
+  and merging them to tidy a report destroys the only distinction that made
+  either useful. Before combining any two events, confirm they fire from the
+  same trigger on the same population — not merely that the names look alike
+- **A field name that changes breaks every downstream parser silently.** An
+  integration that labels a value `Phone:` and later `Phone Number:` will keep
+  delivering data while anything matching the old label quietly reads empty.
+  When a series drops to zero without a business explanation, check the field
+  names before checking the market
 - **Absence of a source value is not absence of the channel.** It usually means
   nobody added it to the form
 
@@ -59,3 +84,6 @@ business actually runs on — then compare, for the same window and definition:
 The taxonomy audit as a table of values and shares. The untagged share. The
 platform-versus-record gap per channel with a verdict. Then one line: are these
 numbers safe to decide on, and if not, the single fix that would make them so.
+
+See also `form-friction`, which depends on this skill's verdict before any
+completion rate can be believed.

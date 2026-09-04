@@ -58,8 +58,8 @@ broken. Fixing the average fixes neither.
 
 For each candidate leak, state: people lost per month, the conversion lift you
 would need to matter, and whether that lift is plausible. "Improve checkout by
-30%" is not a plan. "Recover 400 of the 615 monthly form abandons by cutting
-three fields" is.
+30%" is not a plan. "Cut three fields to recover roughly a third of the monthly
+form abandons, which at current traffic is a few hundred people" is.
 
 ## When to refuse
 

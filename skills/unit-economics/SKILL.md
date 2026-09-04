@@ -62,6 +62,10 @@ the ratio misleads.
 - Fewer than ~30 conversions in the window
 - Cohorts too young to observe retention, and a projection would carry the answer
 - Attribution not verified — see the `data-trust` skill first
+- **Delivery cost is per slot rather than per customer.** Where a class, van,
+  appointment or route costs roughly the same however many customers it serves,
+  per-customer margin is a function of occupancy and this skill will understate
+  the real lever. Use `capacity-economics` instead
 
 ## Output
 
